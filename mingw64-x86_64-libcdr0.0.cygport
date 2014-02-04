@@ -1,0 +1,22 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
+NAME="mingw64-x86_64-libcdr0.0"
+VERSION=0.0.14
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Corel Draw import filter library for Win64 toolchain"
+DESCRIPTION="Libcdr is a library providing ability to interpret and import
+Corel Draw drawings into various applications."
+HOMEPAGE="http://www.freedesktop.org/wiki/Software/libcdr"
+SRC_URI="http://dev-www.libreoffice.org/src/libcdr-${VERSION}.tar.xz"
+SRC_DIR="libcdr-${VERSION}"
+
+CYGCONF_ARGS="--without-docs"
+
+src_install() {
+	cd ${B}
+	cyginstall bin_PROGRAMS=
+}
+
+KEEP_LA_FILES="none"
